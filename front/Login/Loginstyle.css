@@ -53,20 +53,20 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-.right-sector div h2{
+.log div h2{
     font-family: "Noto Sans", sans-serif;
 }
-.right-sector div:nth-child(1){
+.log div:nth-child(1){
     display: flex;
     justify-content: center;
     padding-top: 8rem;
     margin-bottom: 20px;
 }
-.right-sector div:nth-child(2){
+.log div:nth-child(2){
     padding-left: 3rem;
     margin-bottom: 20px;
 }
-.right-sector div:nth-child(2) input{
+.log div:nth-child(2) input{
     width: 90%;
     height: 2.5rem;
     border-style: none;
@@ -74,15 +74,15 @@
     border-bottom-style: solid;
     padding-left: 10px;
 }
-.right-sector div:nth-child(2) input:focus{
+.log div:nth-child(2) input:focus{
     outline: none;
 }
-.right-sector div:nth-child(3){
+.log div:nth-child(3){
     padding-left: 3rem;
     margin-bottom: 50px;
     
 }
-.right-sector div:nth-child(3) input{
+.log div:nth-child(3) input{
     width: 90%;
     height: 2.5rem;
     border-style: none;
@@ -90,20 +90,20 @@
     border-bottom-style: solid;
     padding-left: 10px;
 }
-.right-sector div:nth-child(3) input:focus{
+.log div:nth-child(3) input:focus{
     outline: none;
 }
-.right-sector div:nth-child(4){
+.log div:nth-child(4){
     padding-left: 3rem;
     display: flex;
     flex-direction: column;
 }
 
-.right-sector div:nth-child(4) a{
+.log div:nth-child(4) a{
     text-decoration: none;
     color: black;
 }
-.right-sector div:nth-child(4) button{
+.log div:nth-child(4) button{
     width: 90%;
     height: 2.5rem;
     border-radius: 10px;
@@ -113,13 +113,13 @@
     font-size: 15px;
     font-family: "Noto Sans", sans-serif;
 }
-.right-sector div:nth-child(5) {
+.log div:nth-child(5) {
     padding-left: 3rem;
     display: flex;
     flex-direction: column;
     margin-top: 4rem;
 }
-.right-sector div:nth-child(5) button{
+.log div:nth-child(5) button{
     width: 90%;
     height: 2.5rem;
     border-radius: 10px;
@@ -129,9 +129,97 @@
     font-size: 15px;
     font-family: "Noto Sans", sans-serif;
 }
-.right-sector div button:hover{
+.log div button:hover{
     cursor: pointer;
     font-size: 16px;
     color: #1e1f23;
     transition: font-size 0.2s ease-in-out, color 0.2s ease-in-out;
 }
+/*Register*/
+.register div h2{
+    font-family: "Noto Sans", sans-serif;
+}
+.register div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    padding-top: 8rem;
+    margin-bottom: 20px;
+}
+.register div:nth-child(2){
+    padding-left: 3rem;
+    margin-bottom: 20px;
+}
+.register div:nth-child(2) input{
+    width: 90%;
+    height: 2.5rem;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding-left: 10px;
+}
+.register div:nth-child(2) input:focus{
+    outline: none;
+}
+.register div:nth-child(3){
+    padding-left: 3rem;
+    margin-bottom: 20px;
+    
+}
+.register div:nth-child(3) input{
+    width: 90%;
+    height: 2.5rem;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding-left: 10px;
+}
+.register div:nth-child(3) input:focus{
+    outline: none;
+}
+.register div:nth-child(4){
+    padding-left: 3rem;
+    margin-bottom: 50px;
+}
+.register div:nth-child(4) input{
+    width: 90%;
+    height: 2.5rem;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding-left: 10px;
+}
+.register div:nth-child(4) input:focus{
+    outline: none;
+}
+.register div:nth-child(5) {
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    font-family: "Noto Sans", sans-serif;
+}
+.register div:nth-child(5) button{
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #f84b37;
+    color: whitesmoke;
+    font-size: 15px;
+    font-family: "Noto Sans", sans-serif;
+}
+.register div:nth-child(5) a{
+    text-decoration: none;
+    color: #f84b37;
+    font-family: "Noto Sans", sans-serif;
+}
+.register div button:hover{
+    cursor: pointer;
+    font-size: 16px;
+    color: #1e1f23;
+    transition: font-size 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.pipe:hover{
+    cursor: pointer;
+}
+/*Move*/
