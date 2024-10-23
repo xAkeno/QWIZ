@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*Menu part*/
+.menu{
+    background-color: #1e1f23;
+    height: 4rem;
+    padding: 10px;
+}
+.left{
+    height: 4rem;
+    background-color: bisque;
+}
+.left-logo img{
+    height: 4rem;
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    padding-right: 20px;
+}
+.right-menu ul{
+    height: 100%;
+    gap: 50px;
+    font-size: 22px;
+    font-family: "Rethink Sans", sans-serif;
+    color: #ebe7d8;
+}
+.right-menu ul li:hover{
+    cursor: pointer;
+    color: #f84b37;
+    transition: 0.2s color ease-in-out;
+}
+/*content*/
+.content{
+    height: 60rem;
+    background-color: #ebe7d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center{
+    background-color: #1e1f23b7;
+    border-radius: 10px;
+    width: 50rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: #f84b37 0px 20px 0px 10px;
+}
+.banner-input{
+    height: 35%;
+    width: 55%;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.banner-input input:focus{
+    outline: none;
+}
+.banner-input input{
+    height: 100%;
+    width: 80%;
+    font-size: 40px;
+    padding-left: 10px;
+    border-style: none;
+}
+.banner-input button{
+    height: 55%;
+    width: 20%;
+    border-style: none;
+    background-color: #f84b37;
+    font-family: "Rethink Sans", sans-serif;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    color: whitesmoke
+}
+.banner-input button:hover{
+    cursor: pointer;
+    box-shadow: #1e1f23b7 0px 5px 0px 3px;
+    transition: 0.2s box-shadow ease-in-out;
+}
+
