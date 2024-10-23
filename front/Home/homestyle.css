@@ -36,7 +36,7 @@
 }
 /*content*/
 .content{
-    height: 60rem;
+    height: 45.7rem;
     background-color: #ebe7d8;
     display: flex;
     justify-content: center;
@@ -87,5 +87,77 @@
     cursor: pointer;
     box-shadow: #1e1f23b7 0px 5px 0px 3px;
     transition: 0.2s box-shadow ease-in-out;
+}
+/*Footer*/
+.link{
+    background-color: #1e1f23c5;
+    height: 13rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.link-sector{
+    display: flex;
+    gap: 100px;
+    margin-right: 5rem;
+    font-size: 20px;
+    color: #f7f7f7;
+    font-family: "Noto Sans", sans-serif;
+}
+.link-sector div ul{
+    list-style: none;
+}
+.link-sector h1{
+    margin-bottom: 10px;
+}
+.link-sector a{
+    text-decoration: none;
+    color: #f7f7f7;
+}
+.link-sector a:hover{
+    cursor: pointer;
+    color: #f84b37;
+    transition: 0.2s color ease-in-out;
+}
+.email-box{
+    width: 25rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.email-box input{
+    height: 2.5rem;
+    width: 10rem;
+    border-style: none;
+    font-size: 25px;
+    width: 100%;
+    font-family: "Noto Sans", sans-serif;
+}
+.email-box input:focus{
+    outline: none;
+}
+.email-box button{
+    width: 20%;
+    height: 80%;
+    border-style: none;
+    background-color: white;
+}
+.email-box button:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: #1e1f23b7 0px 5px 0px 0px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.footer-foot{
+    height: 2.3rem;
+    font-family: "Noto Sans", sans-serif;
+    color: #1e1f23c5;
+}
+.footer-foot div{
+    display: flex;
+    justify-content: center;
 }
 
