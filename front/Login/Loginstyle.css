@@ -1,1 +1,137 @@
-hello
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: #ebe7d8;
+    height:66rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center{
+    height: 60%;
+    width: 50%;
+    display: flex;
+}
+.left-sector{
+    width: 50%;
+    height: 100%;
+    background-color: #1e1f23;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.left-sector div:nth-child(1){
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    font-size: 25px;
+}
+.left-sector div:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+
+.left-sector div:nth-child(3){
+    font-family: "Noto Sans", sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.right-sector{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.right-sector div h2{
+    font-family: "Noto Sans", sans-serif;
+}
+.right-sector div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    padding-top: 8rem;
+    margin-bottom: 20px;
+}
+.right-sector div:nth-child(2){
+    padding-left: 3rem;
+    margin-bottom: 20px;
+}
+.right-sector div:nth-child(2) input{
+    width: 90%;
+    height: 2.5rem;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding-left: 10px;
+}
+.right-sector div:nth-child(2) input:focus{
+    outline: none;
+}
+.right-sector div:nth-child(3){
+    padding-left: 3rem;
+    margin-bottom: 50px;
+    
+}
+.right-sector div:nth-child(3) input{
+    width: 90%;
+    height: 2.5rem;
+    border-style: none;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding-left: 10px;
+}
+.right-sector div:nth-child(3) input:focus{
+    outline: none;
+}
+.right-sector div:nth-child(4){
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-sector div:nth-child(4) a{
+    text-decoration: none;
+    color: black;
+}
+.right-sector div:nth-child(4) button{
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #f84b37;
+    color: whitesmoke;
+    font-size: 15px;
+    font-family: "Noto Sans", sans-serif;
+}
+.right-sector div:nth-child(5) {
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+.right-sector div:nth-child(5) button{
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #f84b37;
+    color: whitesmoke;
+    font-size: 15px;
+    font-family: "Noto Sans", sans-serif;
+}
+.right-sector div button:hover{
+    cursor: pointer;
+    font-size: 16px;
+    color: #1e1f23;
+    transition: font-size 0.2s ease-in-out, color 0.2s ease-in-out;
+}
