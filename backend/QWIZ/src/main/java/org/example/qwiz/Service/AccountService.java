@@ -50,9 +50,9 @@ public class AccountService {
         //finding the username on database using the response username
         Optional<Account> acc = accountRepository.findByUsername(account.getUsername());
         //matching the response
-        if(!passwordEncoder.matches(account.getPassword(), acc.get().getPassword())){
+        if(passwordEncoder.matches(account.getPassword(), acc.get().getPassword())){
             //authenticating the username and password and make it into Authentication
-            Authentication auth = new UsernamePasswordAuthenticationToken(account.getPassword(),account.getUsername());
+            Authentication auth = new UsernamePasswordAuthenticationToken(account.getUsername(),account.getPassword());
             //Then put the auth into the securityContext Holder
             SecurityContextHolder.getContext().setAuthentication(auth);
             //passing the auth and generate the jwt using the auth and pass this to the cookie
