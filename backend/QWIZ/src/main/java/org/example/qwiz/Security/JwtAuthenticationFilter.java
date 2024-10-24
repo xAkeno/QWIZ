@@ -36,6 +36,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (cookie != null) {
             token = cookie.getValue();
         }
+        System.out.println(token);
         if(StringUtils.hasText(token) && JwtGenerator.validateToken(token)){
             String username = JwtGenerator.extractUsername(token);
             System.out.println(username);

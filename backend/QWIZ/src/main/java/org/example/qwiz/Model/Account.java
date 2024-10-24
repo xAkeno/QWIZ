@@ -8,6 +8,7 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -38,7 +39,6 @@ public class Account implements UserDetails {
     public String getPassword() {
         return password;
     }
-
     @Override
     public String getUsername() {
         return username;
@@ -63,4 +63,6 @@ public class Account implements UserDetails {
     public boolean isEnabled() {
         return UserDetails.super.isEnabled();
     }
+    @ManyToMany(mappedBy = "account",fetch = FetchType.LAZY)
+    public List<Classroom> classrooms = new ArrayList<>();
 }
