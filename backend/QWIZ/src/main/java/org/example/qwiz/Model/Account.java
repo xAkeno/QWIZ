@@ -65,4 +65,8 @@ public class Account implements UserDetails {
     }
     @ManyToMany(mappedBy = "account",fetch = FetchType.LAZY)
     public List<Classroom> classrooms = new ArrayList<>();
+
+    public Account(Integer id) {
+        this.id = id;
+    }
 }

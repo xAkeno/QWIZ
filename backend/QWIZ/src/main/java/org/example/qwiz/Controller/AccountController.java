@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("api/auth")
 @CrossOrigin("http://127.0.0.1:5500")
@@ -38,8 +40,9 @@ public class AccountController {
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
         //if json is not empty it will procced to the log service and will check if user is authenticate and send a cookie with jwt
-        if(accountService.log(account, response).isPresent()){
-            return ResponseEntity.ok().body(new AuthDTO(accountService.log(account,response)));
+        String jwt = accountService.log(account, response);
+        if(jwt !=null){
+            return ResponseEntity.ok().body(new AuthDTO(Optional.of(jwt)));
         }
         
         return new ResponseEntity<>(HttpStatus.CONFLICT);

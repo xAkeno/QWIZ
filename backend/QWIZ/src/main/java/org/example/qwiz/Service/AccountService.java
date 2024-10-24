@@ -42,10 +42,10 @@ public class AccountService {
         newAccount.setRole(Role.USER);
         return Optional.of(accountRepository.save(newAccount));
     }
-    public Optional<String> log(Account account, HttpServletResponse response) {
+    public String log(Account account, HttpServletResponse response) {
         //check if the json is empty
         if(account == null){
-            return Optional.empty();
+            return null;
         }
         //finding the username on database using the response username
         Optional<Account> acc = accountRepository.findByUsername(account.getUsername());
@@ -65,9 +65,9 @@ public class AccountService {
              cookie.setMaxAge(3600);
              cookie.setSecure(true);
              response.addCookie(cookie);
-            return Optional.of(token);
+            return token;
         }
         //return empty if the password and user is not found
-        return Optional.empty();
+        return null;
     }
 }

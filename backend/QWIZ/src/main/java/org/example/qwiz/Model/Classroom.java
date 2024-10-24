@@ -26,7 +26,7 @@ public class Classroom {
     @Column(nullable = false,name = "created")
     private String created;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "Classroom_Account",
         joinColumns = {
             @JoinColumn(name = "ClassroomId",referencedColumnName = "id")
@@ -35,4 +35,8 @@ public class Classroom {
         }
     )
     private List<Account> account = new ArrayList<>();
+
+    public Classroom(Integer id) {
+        this.id = id;
+    }
 }
