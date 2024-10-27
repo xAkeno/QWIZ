@@ -1,5 +1,6 @@
 package org.example.qwiz.Service;
 
+import org.example.qwiz.DTO.ClassroomJoinedDTO;
 import org.example.qwiz.Model.Account;
 import org.example.qwiz.Model.Classroom;
 import org.example.qwiz.Repository.AccountRepository;
@@ -8,10 +9,8 @@ import org.example.qwiz.Security.JwtGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
+
 @Service
 public class ClassroomService {
     private ClassroomRepository classroomRepository;
@@ -65,5 +64,19 @@ public class ClassroomService {
         classroom.getAccount().add(creatorAccount);
         classroomRepository.save(classroom);
         return Optional.of(code);
+    }
+    public List<ClassroomJoinedDTO> GetAllJoinedClassroom(String jwt){
+        String username = JwtGenerator.extractUsername(jwt);
+        int userId = accountRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found")).getId();
+        List<Object[]> results = classroomRepository.FindJoinedAccountById(userId);
+        List<ClassroomJoinedDTO> news = new ArrayList<>();
+        for (Object[] row : results) {
+            int accountId = (Integer) row[0];
+            int classroomId = (Integer) row[1];
+            System.out.println(classroomId + " " + accountId);
+            ClassroomJoinedDTO classro = new ClassroomJoinedDTO(accountId,classroomId);
+            news.add(classro);
+        }
+        return news;
     }
 }

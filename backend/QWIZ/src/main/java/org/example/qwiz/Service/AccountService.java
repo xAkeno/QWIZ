@@ -59,12 +59,11 @@ public class AccountService {
             String token = jwtGenerator.generateToken(auth);
 
             //creating a cookie that is httponly and send it along side token
-            Cookie cookie = new Cookie("Cookie", token);
-             cookie.setPath("/");
-             cookie.setHttpOnly(true);
-             cookie.setMaxAge(3600);
-             cookie.setSecure(true);
-             response.addCookie(cookie);
+            Cookie cookie = new Cookie("token", token);
+            response.addHeader("Set-Cookie", cookie.getName()
+                    + "=" + cookie.getValue()
+                    + "; Path=" + "/"
+                    + "; Secure; HttpOnly; SameSite=None");
             return token;
         }
         //return empty if the password and user is not found

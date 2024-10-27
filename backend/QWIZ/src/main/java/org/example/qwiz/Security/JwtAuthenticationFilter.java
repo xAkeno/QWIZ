@@ -32,11 +32,17 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                     @NotNull FilterChain filterChain) throws ServletException, IOException {
         String token = "";
 
-        Cookie cookie = WebUtils.getCookie(request, "Cookie");
-        if (cookie != null) {
-            token = cookie.getValue();
+        Cookie[] cookies = request.getCookies();
+
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                // Check for the specific cookie name you want
+                if ("token".equals(cookie.getName())) { // Use the actual cookie name
+                    token = cookie.getValue();
+                }
+            }
         }
-        System.out.println(token);
+        System.out.println(token + "===");
         if(StringUtils.hasText(token) && JwtGenerator.validateToken(token)){
             String username = JwtGenerator.extractUsername(token);
             System.out.println(username);
