@@ -19,4 +19,7 @@ public class ClassroomJoinedDTO {
         this.ClassroomId = classroomId;
     }
 
+    public ClassroomJoinedDTO(int accountId) {
+        AccountId = accountId;
+    }
 }

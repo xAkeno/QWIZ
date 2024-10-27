@@ -13,12 +13,15 @@ import java.util.Optional;
 @Repository
 public interface ClassroomRepository extends JpaRepository<Classroom, Integer> {
     Classroom findByClassroomId(String classroomId);
-    @Query(value = "SELECT * FROM classroom_account WHERE classroom_id = :classroomCode",nativeQuery = true)
-    Object[] FindJoinedClassroomById(@Param("classroomCode") int classroomCode);
+    @Query(value = "SELECT account_id FROM classroom_account WHERE classroom_id = :classroomId",nativeQuery = true)
+    List<Object[]> FindJoinedClassroomById(@Param("classroomId") int classroomId);
 
     @Query(value = "SELECT * FROM classroom_account WHERE account_id = :accountIds",nativeQuery = true)
     List<Object[]> FindJoinedAccountById(@Param("accountIds") int accountIds);
 
     @Query(value = "SELECT * FROM classroom WHERE id = :id",nativeQuery = true)
     Classroom findById(int id);
+
+    @Query(value = "SELECT * FROM classroom WHERE creator=:creator",nativeQuery = true)
+    List<Object[]> GetAllCreatedClass(@Param("creator") String creator);
 }

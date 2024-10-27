@@ -39,4 +39,11 @@ public class Classroom {
     public Classroom(Integer id) {
         this.id = id;
     }
+
+    public Classroom(Integer id,String classroomId, String creator, String created) {
+        this.id = id;
+        this.classroomId = classroomId;
+        this.creator = creator;
+        this.created = created;
+    }
 }

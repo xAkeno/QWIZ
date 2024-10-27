@@ -79,4 +79,37 @@ public class ClassroomService {
         }
         return news;
     }
+    public List<ClassroomJoinedDTO> GetAllStudent(int classroomId){
+//        String username = JwtGenerator.extractUsername(jwt);
+        List<Object[]> result = classroomRepository.FindJoinedClassroomById(classroomId);
+        List<ClassroomJoinedDTO> news = new ArrayList<>();
+        for (Object[] row : result) {
+            int accountId = (Integer) row[0];
+            ClassroomJoinedDTO classro = new ClassroomJoinedDTO(accountId);
+            news.add(classro);
+        }
+        return news;
+    }
+    /*
+    * private Integer id;
+    @Column(unique = true, nullable = false,name = "classroomId")
+    private String classroomId;
+    @Column(nullable = false,name = "creator")
+    private String creator;
+    @Column(nullable = false,name = "created")
+    private String created;*/
+    public  List<Classroom> GetAllTheClassCreated(String jwt){
+        String username = JwtGenerator.extractUsername(jwt);
+        List<Object[]> result = classroomRepository.GetAllCreatedClass(username);
+        List<Classroom> news = new ArrayList<>();
+        for (Object[] row : result) {
+            int id = (Integer) row[0];
+            String classroomId = (String) row[1];
+            String created = (String) row[2];
+            String creator = (String) row[3];
+
+            news.add(new Classroom(id,classroomId,creator,created));
+        }
+        return news;
+    }
 }
