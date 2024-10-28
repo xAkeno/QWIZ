@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    display: flex;
+    background-color: #ebe7d8;
+}
+.menu{
+    width: 10%;
+    background-color: #1e1f23;
+    height: 66.1rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.user h3{
+    color: whitesmoke;
+    font-family: "Rethink Sans", sans-serif;
+}
+.manage{
+    color: #1e1f23;
+    font-family: "Rethink Sans", sans-serif;
+    background-color: rgb(209, 211, 211);
+    height: 40px;
+    width: 80%;
+    padding: 5px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+.manage:hover{
+    background-color: rgb(166, 167, 167);
+    transition: 0.3s background-color ease-in-out;
+}
+.create-btn{
+    background-color: #f84b37;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-self: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+.create-btn button{
+    background-color: #f84b37;
+    height: 30px;
+    font-size: 15px;
+    padding: 5px;
+    font-family: "Rethink Sans", sans-serif;
+    border-style: none;
+    color: whitesmoke;
+}
+/*settings*/
+.setting{
+}
+.setting a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: "Rethink Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 22px;
+}
+.setting ul{
+    padding-left: 20px;
+}
+.setting ul li{
+    margin-bottom: 20px;
+}
+.setting ul li:hover{
+    color: #f84b37;
+    transition: 0.5s color ease-in-out;
+}
+.setting a:hover{
+    color: #f84b37;
+    transition: 0.3s color ease-in-out;
+}
+/*content*/
+.center{
+    width: 60%;
+    height: 65rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(248, 248, 248);
+    padding: 20px;
+}
+.banner{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px; 
+    margin-bottom: 40px;
+}
+.banner div button{
+    font-size: 15px;
+    padding: 10px;
+}
+/*result*/
+.result-total{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+}
+.result{
+    width: auto;
+    height: 12rem;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+}
+.result:hover{
+    transform: translateY(-15px);
+    transition: 0.2s transform ease-in-out;
+}
+.subject{
+    background-color: #1e1f2325;
+    height: 50%;
+    padding-left: 20px;
+    padding-top: 20px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: "Noto Sans Elbasan", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.noto-sans-elbasan-regular {
+    font-family: "Noto Sans Elbasan", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.creator{
+    padding-left: 20px;
+    padding-top: 20px;
+    height: 28.6%;
+}
+.subject h2{
+    margin-bottom: 15px;
+}
+.join{
+    color: whitesmoke;
+    background-color: #f84b37;
+    font-family: "Noto Sans Elbasan", sans-serif;
+    border-style: none;
+    height: 2.5rem;
+}
+.join:hover{
+    cursor: pointer;
+    background-color: #da4b3b;
+}

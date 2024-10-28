@@ -1,73 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Login/Loginstyle.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Login/Loginstyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
     <title>QWIZ</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="center">
-            <div class="left-sector">
-                <div>
-                    <h2>Welcome to QWIZ</h2>
-                </div>
-                <div>
-                    <img src="../image/logo.png" alt="//QWIZ">
-                </div>
-                <div>
-                    <strong>QWIZ</strong> is a platform where users can join classes, submit assignments, and take quizzes, offering a streamlined way to manage learning and assessments.
-                </div>
-            </div>
-            <div class="right-sector">
-                <div class="log" >
-                    <div>
-                        <h2>Log-In</h2>
-                    </div>
-                    <div>
-                        <h2>Username</h2>
-                        <input type="text" placeholder="Enter you Username">
-                    </div>
-                    <div>
-                        <h2>Password</h2>
-                        <input type="password" placeholder="Enter you Username">
-                    </div>
-                    <div>
-                        <button>Log In</button>
-                        <a href="">Forgot password</a>
-                    </div>
-                    <div>
-                        <button onclick="create()">Create</button>
-                    </div>
-                </div>
-                <div class="register" style="display: none;">
-                    <div>
-                        <h2>Create your account</h2>
-                    </div>
-                    <div>
-                        <h2>Username</h2>
-                        <input type="text" placeholder="Enter your Username">
-                    </div>
-                    <div>
-                        <h2>Email Address</h2>
-                        <input type="text" placeholder="Enter your Email">
-                    </div>
-                    <div>
-                        <h2>Password</h2>
-                        <input type="password" placeholder="Enter your Password">
-                    </div>
-                    <div>
-                        <button onclick="Tolog()">Create</button>
-                        <span>Already have account? <a onclick="Tolog()" class="pipe"><strong>Log In</strong></a></span>
-                    </div>
-                </div>
-            </div>
+      <div class="center">
+        <div class="left-sector">
+          <div>
+            <h2>Welcome to QWIZ</h2>
+          </div>
+          <div>
+            <img src="../image/logo.png" alt="//QWIZ" />
+          </div>
+          <div>
+            <strong>QWIZ</strong> is a platform where users can join classes,
+            submit assignments, and take quizzes, offering a streamlined way to
+            manage learning and assessments.
+          </div>
         </div>
+        <div class="right-sector">
+          <div class="log">
+            <div>
+              <h2>Log-In</h2>
+            </div>
+            <div>
+              <h2>Username</h2>
+              <input
+                type="text"
+                placeholder="Enter you Username"
+                id="usernamelog"
+              />
+            </div>
+            <div>
+              <h2>Password</h2>
+              <input
+                type="password"
+                placeholder="Enter you Username"
+                id="passwordlog"
+              />
+            </div>
+            <div>
+              <button onclick="login()">Log In</button>
+              <a href="">Forgot password</a>
+            </div>
+            <div>
+              <button onclick="create()">Create</button>
+            </div>
+          </div>
+          <div class="register" style="display: none">
+            <div>
+              <h2>Create your account</h2>
+            </div>
+            <div>
+              <h2>Username</h2>
+              <input type="text" placeholder="Enter your Username" />
+            </div>
+            <div>
+              <h2>Email Address</h2>
+              <input type="text" placeholder="Enter your Email" />
+            </div>
+            <div>
+              <h2>Password</h2>
+              <input type="password" placeholder="Enter your Password" />
+            </div>
+            <div>
+              <button onclick="Tolog()">Create</button>
+              <span
+                >Already have account?
+                <a onclick="Tolog()" class="pipe"
+                  ><strong>Log In</strong></a
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="../Login/Loginscript.js"></script>
-</body>
+  </body>
 </html>

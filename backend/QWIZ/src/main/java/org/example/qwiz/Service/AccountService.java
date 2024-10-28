@@ -60,10 +60,13 @@ public class AccountService {
 
             //creating a cookie that is httponly and send it along side token
             Cookie cookie = new Cookie("token", token);
+            cookie.setPath("/");
+            cookie.setHttpOnly(true);
+            cookie.setSecure(false); // set to true in production with HTTPS
             response.addHeader("Set-Cookie", cookie.getName()
                     + "=" + cookie.getValue()
                     + "; Path=" + "/"
-                    + "; Secure; HttpOnly; SameSite=None");
+                    + "; HttpOnly; SameSite=None; Secure");
             return token;
         }
         //return empty if the password and user is not found

@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    display:flex;
+    background-color: #ebe7d8;
+}
+/*menu*/
+.menu{
+    width: 10%;
+    background-color: #1e1f23;
+    height: 66.1rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.user h3{
+    color: whitesmoke;
+    font-family: "Rethink Sans", sans-serif;
+}
+.manage{
+    color: #1e1f23;
+    font-family: "Rethink Sans", sans-serif;
+    background-color: rgb(209, 211, 211);
+    height: 40px;
+    width: 80%;
+    padding: 5px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+.manage:hover{
+    background-color: rgb(166, 167, 167);
+    transition: 0.3s background-color ease-in-out;
+}
+.create-btn{
+    background-color: #f84b37;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-self: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+.create-btn button{
+    background-color: #f84b37;
+    height: 30px;
+    font-size: 15px;
+    padding: 5px;
+    font-family: "Rethink Sans", sans-serif;
+    border-style: none;
+    color: whitesmoke;
+}
+/*settings*/
+.setting{
+    
+}
+.setting a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-family: "Rethink Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 22px;
+}
+.setting ul{
+    padding-left: 20px;
+}
+.setting ul li{
+    margin-bottom: 20px;
+}
+.setting ul li:hover{
+    color: #f84b37;
+    transition: 0.5s color ease-in-out;
+}
+.setting a:hover{
+    color: #f84b37;
+    transition: 0.3s color ease-in-out;
+}
+/*content center*/
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
+.center-content{
+    height: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    padding: 5px;
+    margin-bottom: 5rem;
+    background-color: whitesmoke;
+}
+.center-content a{
+    text-decoration: none;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+.change-profile div{
+    padding: 5px;
+}
+.username-sector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.username-sector:hover{
+    cursor: pointer;
+    box-shadow: #f84b37 0px 2px 0px 0px;
+    transition: 0.2s box-shadow ease-in-out;
+}
+.name-sector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.name-sector:hover{
+    cursor: pointer;
+    box-shadow: #f84b37 0px 2px 0px 0px;
+    transition: 0.2s box-shadow ease-in-out;
+}
+.grade-sector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.grade-sector:hover{
+    cursor: pointer;
+    box-shadow: #f84b37 0px 2px 0px 0px;
+    transition: 0.2s box-shadow ease-in-out;
+}
+.class-sector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.class-sector:hover{
+    cursor: pointer;
+    box-shadow: #f84b37 0px 2px 0px 0px;
+    transition: 0.2s box-shadow ease-in-out;
+}
+/*account setting*/
+.account-box{
+    height: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: whitesmoke;
+}
+.account-box div{
+    padding: 5px;
+}
+.account-box a{
+    text-decoration: none;
+    color: black;
+    font-family: "Poppins", sans-serif;
+}
+.updatepassword-sector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.deleteaccount-sector{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logout{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.updatepassword-sector:hover{
+    cursor: pointer;
+    box-shadow: #f84b37 0px 2px 0px 0px;
+    transition: 0.2s box-shadow ease-in-out;
+}
+.deleteaccount-sector:hover{
+    cursor: pointer;
+    box-shadow: #f84b37 0px 2px 0px 0px;
+    transition: 0.2s box-shadow ease-in-out;
+}
+.logout:hover{
+    cursor: pointer;
+    box-shadow: #f84b37 0px 2px 0px 0px;
+    transition: 0.2s box-shadow ease-in-out;
+}
