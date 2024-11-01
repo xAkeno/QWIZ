@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dashboard/dashboardstyle.css" />
+    <title>//QWIZ</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <div class="logo">
+          <a href="../Home/home.html"
+            ><img src="../image/logosmall.png" width="100%"
+          /></a>
+        </div>
+        <div class="user">
+          <h3>Clark Kent Raguhos</h3>
+          <h3>Student</h3>
+        </div>
+        <div class="setting">
+          <ul>
+            <li><a href="">Library</a></li>
+            <li><a href="../dashboard/dashboard.html">Activity</a></li>
+            <li><a href="../Classes/Class.html">Classes</a></li>
+            <li><a href="../profile/profile.html">Setting</a></li>
+            <li><a href="">Log out</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content">
+        <div class="center">
+          <div class="banner">
+            <h1>Dashboard</h1>
+          </div>
+          <div class="timeline">
+            <div class="title">
+              <h3 style="font-family: Arial, Helvetica, sans-serif">
+                Timeline
+              </h3>
+            </div>
+            <div class="filter">
+              <div class="filters">
+                <select name="filter-1" id="filter-1">
+                  <option value="All">All</option>
+                  <option value="Overdue">Overdue</option>
+                </select>
+                <select name="filter-2" id="filter-2">
+                  <option value="All">Any</option>
+                  <option value="due-7">Last 7 days</option>
+                  <option value="due-15">Last 15 days</option>
+                  <option value="due-30">Last 30 days</option>
+                </select>
+                <select name="filter-3" id="filter-3">
+                  <option value="sort-date">Sort by dates</option>
+                </select>
+              </div>
+              <div class="search">
+                <input
+                  type="text"
+                  placeholder="Search by activity type or name"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="result">
+            <div class="output">
+              <div class="sum">
+                <div class="date">
+                  <h4>Thurday, 14 November 2024</h4>
+                </div>
+                <div class="bottom">
+                  <div class="event">
+                    <img src="../image/activity.png" alt="" height="30px" />
+                  </div>
+                  <div class="bottom-right">
+                    <span><strong>infix Postfix</strong></span>
+                    <span>Data Structure</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

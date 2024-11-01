@@ -29,7 +29,15 @@
     font-family: "Rethink Sans", sans-serif;
     color: #ebe7d8;
 }
-.right-menu ul li:hover{
+.right-menu a{
+    height: 100%;
+    gap: 50px;
+    font-size: 22px;
+    font-family: "Rethink Sans", sans-serif;
+    text-decoration: none;
+    color: #ebe7d8;
+}
+.right-menu a:hover{
     cursor: pointer;
     color: #f84b37;
     transition: 0.2s color ease-in-out;

@@ -42,7 +42,7 @@ public class AccountService {
         newAccount.setRole(Role.USER);
         return Optional.of(accountRepository.save(newAccount));
     }
-    public String log(Account account, HttpServletResponse response) {
+    public String log(Account account) {
         //check if the json is empty
         if(account == null){
             return null;
@@ -57,16 +57,9 @@ public class AccountService {
             SecurityContextHolder.getContext().setAuthentication(auth);
             //passing the auth and generate the jwt using the auth and pass this to the cookie
             String token = jwtGenerator.generateToken(auth);
-
+            System.out.println(token);
             //creating a cookie that is httponly and send it along side token
-            Cookie cookie = new Cookie("token", token);
-            cookie.setPath("/");
-            cookie.setHttpOnly(true);
-            cookie.setSecure(false); // set to true in production with HTTPS
-            response.addHeader("Set-Cookie", cookie.getName()
-                    + "=" + cookie.getValue()
-                    + "; Path=" + "/"
-                    + "; HttpOnly; SameSite=None; Secure");
+
             return token;
         }
         //return empty if the password and user is not found

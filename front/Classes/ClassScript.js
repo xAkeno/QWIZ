@@ -5,6 +5,9 @@ async function joinclass() {
   const api = await fetch(url, {
     method: "POST",
     credentials: "include",
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access_token"),
+    },
   }).then((response) => {
     if (response.status == 200) {
       alert("successfull join the class");
@@ -17,6 +20,9 @@ async function getAllJoined() {
 
   const api = await fetch(url, {
     method: "GET",
+    headers: {
+      Authorization: "Bearer " + localStorage.getItem("access_token"),
+    },
     credentials: "include",
   })
     .then(function (response) {

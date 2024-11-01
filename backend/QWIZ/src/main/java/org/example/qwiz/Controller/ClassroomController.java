@@ -22,83 +22,45 @@ public class ClassroomController {
         this.classroomService = classroomService;
     }
     @PostMapping("/create")
-    public ResponseEntity<String> Createclassroom(HttpServletRequest request) {
-        String token = "";
-
-        Cookie[] cookies = request.getCookies();
-
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                // Check for the specific cookie name you want
-                if ("token".equals(cookie.getName())) { // Use the actual cookie name
-                    token = cookie.getValue();
-                }
-            }
-        }
-        String generatedcode = classroomService.generateClassroom(token);
-        if(generatedcode != null){
+    public ResponseEntity<String> Createclassroom(@RequestHeader("Authorization") String authorizationHeader) {
+        if(authorizationHeader !=null && authorizationHeader.startsWith("Bearer ")) {
+            String token = authorizationHeader.substring(7);
+            String generatedcode = classroomService.generateClassroom(token);
             return ResponseEntity.ok().body(generatedcode);
         }
         return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
     }
     @PostMapping("/join/{code}")
-    public ResponseEntity<String> Joinclassroom(HttpServletRequest request,@PathVariable(name = "code") String code) {
-        String token = "";
-
-        Cookie[] cookies = request.getCookies();
-
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                // Check for the specific cookie name you want
-                if ("token".equals(cookie.getName())) { // Use the actual cookie name
-                    token = cookie.getValue();
-                }
-            }
-        }
-        String responseCode = classroomService.joinClassroom(token,code).get();
-        if(responseCode !=null){
+    public ResponseEntity<String> Joinclassroom(@RequestHeader("Authorization") String authorizationHeader,@PathVariable(name = "code") String code) {
+        if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
+            String token = authorizationHeader.substring(7);
+            String responseCode = classroomService.joinClassroom(token,code).get();
             return ResponseEntity.ok().body(responseCode);
         }
         return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
     }
     @GetMapping("/getAllClass")
-    public ResponseEntity<List<ClassroomJoinedDTO>> GetAllClass(HttpServletRequest request){
-        String token = "";
-
-        Cookie[] cookies = request.getCookies();
-
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                // Check for the specific cookie name you want
-                if ("token".equals(cookie.getName())) { // Use the actual cookie name
-                    token = cookie.getValue();
-                }
-            }
+    public ResponseEntity<List<ClassroomJoinedDTO>> GetAllClass(@RequestHeader("Authorization") String authorizationHeader){
+        if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
+            String token = authorizationHeader.substring(7);
+            return ResponseEntity.ok().body(classroomService.GetAllJoinedClassroom(token));
         }
-//        List<?> obj =  classroomService.GetAllJoinedClassroom(token);
-        return ResponseEntity.ok().body(classroomService.GetAllJoinedClassroom(token));
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
     @GetMapping("/getAllStudent/{classcodeId}")
-    public ResponseEntity<List<ClassroomJoinedDTO>> getStudent(@PathVariable("classcodeId") int id){
-        if(id == 0){
-            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+    public ResponseEntity<List<ClassroomJoinedDTO>> getStudent(@PathVariable("classcodeId") int id,
+                                                               @RequestHeader("Authorization") String authorizationHeader){
+        if(id !=0 && authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
+            return ResponseEntity.ok().body(classroomService.GetAllStudent(id));
         }
-        return ResponseEntity.ok().body(classroomService.GetAllStudent(id));
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
     @GetMapping("/getAllCreatedClass")
-    public ResponseEntity<List<Classroom>> getAllCreatedClass(HttpServletRequest request){
-        String token = "";
-        Cookie[] cookies = request.getCookies();
-
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                // Check for the specific cookie name you want
-                if ("token".equals(cookie.getName())) { // Use the actual cookie name
-                    token = cookie.getValue();
-                }
-            }
+    public ResponseEntity<List<Classroom>> getAllCreatedClass(@RequestHeader("Authorization") String authorizationHeader){
+        if(authorizationHeader != null && authorizationHeader.startsWith("Bearer ")){
+            String token = authorizationHeader.substring(7);
+            return ResponseEntity.ok().body(classroomService.GetAllTheClassCreated(token));
         }
-        else return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
-        return ResponseEntity.ok().body(classroomService.GetAllTheClassCreated(token));
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 }

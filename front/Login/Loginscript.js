@@ -58,10 +58,13 @@ async function login() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(json),
-  }).then(function (response) {
-    if (response.status == 200) {
-      alert("successfully login");
-      window.location = "../Home/home.html";
-    }
-  });
+  })
+    .then((response) => response.json())
+    .then(function (data) {
+      if (data != null) {
+        alert("successfully login");
+        localStorage.setItem("access_token", data.access_token);
+        window.location = "../Home/home.html";
+      }
+    });
 }
