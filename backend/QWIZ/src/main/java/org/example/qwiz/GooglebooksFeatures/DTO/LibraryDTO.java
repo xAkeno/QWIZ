@@ -17,16 +17,16 @@ public class LibraryDTO {
     private String webReadLink;
 
     public LibraryDTO(String title,
-                      String author,
-                      String publishedDate,
-                      String language,
-                      String description,
-                      String pageCount,
-                      String averageRating,
-                      String thumbnailLink,
-                      String pdfStatus,
-                      String pdfLink,
-                      String webReadLink) {
+            String author,
+            String publishedDate,
+            String language,
+            String description,
+            String pageCount,
+            String averageRating,
+            String thumbnailLink,
+            String pdfStatus,
+            String pdfLink,
+            String webReadLink) {
         this.title = title;
         this.author = author;
         this.publishedDate = publishedDate;

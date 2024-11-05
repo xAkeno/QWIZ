@@ -88,6 +88,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 35%;
+    animation: appearlogo 0.2s forwards;
 }
 .center-content{
     height: auto;
@@ -195,4 +196,24 @@
     cursor: pointer;
     box-shadow: #f84b37 0px 2px 0px 0px;
     transition: 0.2s box-shadow ease-in-out;
+}
+@keyframes appear2{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes appearlogo{
+    from{
+        opacity: 0;
+        scale: 0.1;
+    }
+    to{
+        opacity: 1;
+        scale:1;
+    }
 }

@@ -10,7 +10,8 @@
 .menu{
     width: 10%;
     background-color: #1e1f23;
-    height: 50.5rem;
+    min-height: 50.5rem;
+    height: auto;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -156,9 +157,11 @@
 }
 .box-center{
     display: flex;
+    flex-direction: column;
     height: 100%;
     justify-content: center;
     align-items: center;
+    animation: appearlogo 0.2s forwards;
 }
 .banner h1{
     color: whitesmoke;
@@ -167,7 +170,7 @@
 }
 .box{
     background-color: whitesmoke;
-    padding: 10px;
+    padding: 0px 10px 0px;
     display: flex;
     align-items: center;
 }
@@ -186,3 +189,87 @@
     background-color: whitesmoke;
     cursor: pointer;
 }
+/*result*/
+.result{
+    background-color: rgb(224, 223, 223);
+    height: 100%;
+    width: 50%;
+}
+.box-output{
+
+}
+.output-banner{
+    padding: 20px;
+}
+.result-sum{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+}
+.out{
+    border-bottom-style: solid;
+    border-width: 1px;
+    width: 97.5%;
+    padding: 10px;
+    display: flex;
+}
+.out-word{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 0px 10px;
+    height: 10rem;
+    transition: transform 0.2s ease-in-out;
+}
+.out-top{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.description{
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.more{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.more button{
+    border-style: none;
+    background-color: rgb(224, 223, 223);
+    cursor: pointer;
+}
+@keyframes appear2{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes appearlogo{
+    from{
+        opacity: 0;
+        scale: 0.1;
+    }
+    to{
+        opacity: 1;
+        scale:1;
+    }
+}
+/*
+Title: Spring Boot 2
+Author: ["Jens Boje"]
+Publisged Date: 2019-09-20
+langueage: en
+Description: Sale - Reg. Price $19.99 From Zero Spring Experience to Building Your First Microservice with Spring Boot 2 Learn to build your first microservice with Spring Boot. Together we will write a production-ready microservice with a REST API in just a few hours. All starting from having zero experience with Spring at all.Revised and extended 3rd editionUpdate: Using Spring Boot 2.1.8.RELEASE version.Our guides give you brief lessons on a single topic to get you started in no time. We leave the fluff out so you can focus and learn better and faster. Stop wasting hours of your life watching video courses or reading boring compendiums. Use our guide and save your precious time and be way ahead of your competitors on that next big project.We build a real application (less than 850 lines of code though) using a standard Maven project structure together, and I will explain you the steps and libraries involved on the go. You must know Java.You learn best by coding. The way I love learning too. And not by reading fluffy compendiums or watching 10 hours and more of videos. Sure, you can do that, but any developer following my guide will be way ahead of you before you are even halfway through that video course.What you will build:We build a Microservice for storing comments and providing a REST Interface for interacting with the data. The sample application is modeled after a real production application to guide you through building your first Spring Boot application.What you will learn: What problem the Spring Framework actually solves The basics of the Spring Framework aka Core How to build a microservice with Spring Boot 2 How to work with a relational database using the Spring Data JPA Framework How to write the REST API using Spring MVC How to create a service layer and integrate a legacy library using its own Spring ApplicationContext in an XML file How to test the application A simple way to secure your application How to use monitoring and health check out of the box with Spring Boot How to deploy your application How to navigate in the project with Maven You must have experience with Java as we are not covering Java basics. Everything else we use is covered in the guide.If you have questions, do not hesitate to contact me using the email address at the end of the book. I'll answer your questions and improve the book with your feedback. Promised!
+Page Count: 108
+Average Rating: Not Available
+Thumbnail :http://books.google.com/books/content?id=umRdywEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api
+Pdf Status:  
+Pdf LinkNot Available
+Web Read Linkhttp://play.google.com/books/reader?id=umRdywEACAAJ&hl=&source=gbs_api
++*/

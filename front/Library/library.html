@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../Library/libraryStyle.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../image/icon-removebg-preview.png"
+    />
     <title>QWIZ</title>
   </head>
   <body>
@@ -20,7 +25,7 @@
         </div>
         <div class="setting">
           <ul>
-            <li><a href="">Library</a></li>
+            <li><a href="../Library/library.html">Library</a></li>
             <li><a href="../dashboard/dashboard.html">Activity</a></li>
             <li><a href="../Classes/Class.html">Classes</a></li>
             <li><a href="../profile/profile.html">Setting</a></li>
@@ -30,7 +35,7 @@
       </div>
       <div class="content">
         <div class="box-center">
-          <div class="center">
+          <div class="center" style="display: block">
             <div class="banner">
               <h1>QWIZ Library</h1>
             </div>
@@ -41,12 +46,66 @@
                   id="search"
                   placeholder="Search a book Don't add a space"
                 />
-                <button>
+                <button onclick="removeSearchBar()">
                   <img
                     src="../image/search-interface-symbol (1).png"
                     height="25px"
                   />
                 </button>
+              </div>
+            </div>
+          </div>
+          <div class="result" style="display: none">
+            <div class="output">
+              <div class="box-output">
+                <div class="output-banner">
+                  <h2 id="titlez">Title: Spring boot</h2>
+                  <h5>Result found: 50</h5>
+                </div>
+                <div class="result-sum" id="result-sum">
+                  <div class="out">
+                    <div class="out-image">
+                      <img
+                        src="http://books.google.com/books/content?id=umRdywEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                        height="160px"
+                        width="110px"
+                      />
+                    </div>
+                    <div class="out-word">
+                      <div class="out-top">
+                        <div class="title">
+                          <h3>Harry potter</h3>
+                        </div>
+                        <div class="link">
+                          <a href="" target="_blank"
+                            ><img src="../image/book.png" height="30px"
+                          /></a>
+                          <a href="" target="_blank"
+                            ><img src="../image/download-pdf.png" height="30px"
+                          /></a>
+                        </div>
+                      </div>
+                      <div class="author">
+                        <span>Clark kent B. Raguhos</span><br />
+                        <span>Publisheed date: jult 5 2024</span><br />
+                        <span>*****</span>
+                      </div>
+                      <div class="description">
+                        <p style="font-size: 15px" class="text-content">
+                          Sale - Reg. Price $19.99 From Zero Spring Experience
+                          to Building Your First Microservice with Spring Boot 2
+                          Learn to build your first microservice with Spring
+                          Boot.
+                        </p>
+                      </div>
+                      <div class="more">
+                        <button onclick="showMore(this)">
+                          <h4 id="more-text">See More</h4>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

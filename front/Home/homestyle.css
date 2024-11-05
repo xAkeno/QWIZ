@@ -59,6 +59,7 @@
     justify-content: center;
     align-items: center;
     box-shadow: #f84b37 0px 20px 0px 10px;
+    animation: appearlogo 0.2s forwards;
 }
 .banner-input{
     height: 35%;
@@ -168,4 +169,23 @@
     display: flex;
     justify-content: center;
 }
-
+@keyframes appear2{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes appearlogo{
+    from{
+        opacity: 0;
+        scale: 0.1;
+    }
+    to{
+        opacity: 1;
+        scale:1;
+    }
+}
