@@ -55,6 +55,86 @@
     border-style: none;
     color: whitesmoke;
 }
+/*pop up create*/
+.create-pop{
+    background-color: rgba(0, 0, 0, 0.486);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-pop{
+    width: 20%;
+    height: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f84b37;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.banner-pop{
+    font-family: "Rethink Sans", sans-serif;
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+.input-pop{
+    font-family: "Rethink Sans", sans-serif;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+.input-pop input{
+    padding: 10px;
+    font-size: 15px;
+    width: auto;
+}
+.top-pop{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.bottom-pop{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.bottom-pop button{
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border-style: none;
+}
+
+.bottom-pop button:hover{
+    cursor: pointer;
+    box-shadow: 0px 2px 0px 2px rgb(43, 42, 42);
+    transition: 0.2s box-shadow ease-in;
+}
+.about{
+    font-family: "Rethink Sans", sans-serif;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+.about select{
+    padding: 10px;
+    font-size: 15px;
+    border-style: none;
+}
+.grade{
+    font-family: "Rethink Sans", sans-serif;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+.grade select{
+    padding: 10px;
+    font-size: 15px;
+    border-style: none;
+}
 /*settings*/
 .setting{
 }
