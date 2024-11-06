@@ -21,10 +21,10 @@ public class ClassroomController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<String> Createclassroom(@RequestHeader("Authorization") String authorizationHeader) {
-        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+    public ResponseEntity<String> Createclassroom(@RequestHeader("Authorization") String authorizationHeader,@RequestBody Classroom send) {
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ") || send !=null) {
             String token = authorizationHeader.substring(7);
-            String generatedcode = classroomService.generateClassroom(token);
+            String generatedcode = classroomService.generateClassroom(token,send);
             return ResponseEntity.ok().body(generatedcode);
         }
         return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);

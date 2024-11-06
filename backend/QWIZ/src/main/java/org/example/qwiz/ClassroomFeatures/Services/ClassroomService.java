@@ -22,7 +22,7 @@ public class ClassroomService {
         this.jwtGenerator = jwtGenerator;
         this.accountRepository = accountRepository;
     }
-    public String generateClassroom(String jwt) {
+    public String generateClassroom(String jwt,Classroom send) {
         Random rand = new Random();
         Date now = new Date();
         int random1 = 1000 + rand.nextInt(9000);
@@ -40,7 +40,9 @@ public class ClassroomService {
         classroom.setClassroomId(code);
         classroom.setCreator(creator);
         classroom.setCreated(String.valueOf(now));
-
+        classroom.setClassname(send.getClassname());
+        classroom.setCourse(send.getCourse());
+        classroom.setGrade(send.getGrade());
         classroom.getAccount().add(creatorAccount);
 
         classroomRepository.save(classroom);
@@ -70,26 +72,39 @@ public class ClassroomService {
         int userId = accountRepository.findByUsername(username).orElseThrow(() -> new RuntimeException("User not found")).getId();
         List<Object[]> results = classroomRepository.FindJoinedAccountById(userId);
         List<ClassroomJoinedDTO> news = new ArrayList<>();
+        
         for (Object[] row : results) {
             int accountId = (Integer) row[0];
             int classroomId = (Integer) row[1];
+            Classroom show = classroomRepository.findById(classroomId);
+            
+            // Now you can access the fields of the 'classroom' object
+            Integer id = show.getId();
+            String classname = show.getClassname();
+            String classroomIdDb = show.getClassroomId();
+            String course = show.getCourse();
+            String created = show.getCreated(); // assuming it's a LocalDateTime
+            String creator = show.getCreator();
+            String grade = show.getGrade();
+            
+            // Integer id, String classname, Long classroomId, String course, LocalDateTime created, String creator, String grade)
             System.out.println(classroomId + " " + accountId);
-            ClassroomJoinedDTO classro = new ClassroomJoinedDTO(accountId,classroomId);
+            ClassroomJoinedDTO classro = new ClassroomJoinedDTO(id,classname,classroomIdDb,course,created,creator,grade);
             news.add(classro);
         }
         return news;
     }
-    public List<ClassroomJoinedDTO> GetAllStudent(int classroomId){
+    // public List<ClassroomJoinedDTO> GetAllStudent(int classroomId){
 //        String username = JwtGenerator.extractUsername(jwt);
-        List<Object[]> result = classroomRepository.FindJoinedClassroomById(classroomId);
-        List<ClassroomJoinedDTO> news = new ArrayList<>();
-        for (Object[] row : result) {
-            int accountId = (Integer) row[0];
-            ClassroomJoinedDTO classro = new ClassroomJoinedDTO(accountId);
-            news.add(classro);
-        }
-        return news;
-    }
+    //     List<Object[]> result = classroomRepository.FindJoinedClassroomById(classroomId);
+    //     List<ClassroomJoinedDTO> news = new ArrayList<>();
+    //     for (Object[] row : result) {
+    //         int accountId = (Integer) row[0];
+    //         ClassroomJoinedDTO classro = new ClassroomJoinedDTO(accountId);
+    //         news.add(classro);
+    //     }
+    //     return news;
+    // }
     /*
     * private Integer id;
     @Column(unique = true, nullable = false,name = "classroomId")
@@ -98,18 +113,18 @@ public class ClassroomService {
     private String creator;
     @Column(nullable = false,name = "created")
     private String created;*/
-    public  List<Classroom> GetAllTheClassCreated(String jwt){
-        String username = JwtGenerator.extractUsername(jwt);
-        List<Object[]> result = classroomRepository.GetAllCreatedClass(username);
-        List<Classroom> news = new ArrayList<>();
-        for (Object[] row : result) {
-            int id = (Integer) row[0];
-            String classroomId = (String) row[1];
-            String created = (String) row[2];
-            String creator = (String) row[3];
+    // public  List<Classroom> GetAllTheClassCreated(String jwt){
+    //     String username = JwtGenerator.extractUsername(jwt);
+    //     List<Object[]> result = classroomRepository.GetAllCreatedClass(username);
+    //     List<Classroom> news = new ArrayList<>();
+    //     for (Object[] row : result) {
+    //         int id = (Integer) row[0];
+    //         String classroomId = (String) row[1];
+    //         String created = (String) row[2];
+    //         String creator = (String) row[3];
 
-            news.add(new Classroom(id,classroomId,creator,created));
-        }
-        return news;
-    }
+    //         news.add(new Classroom(id,classroomId,creator,created));
+    //     }
+    //     return news;
+    // }
 }

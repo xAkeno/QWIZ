@@ -1,22 +1,38 @@
 package org.example.qwiz.ClassroomFeatures.DTO;
 
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class ClassroomJoinedDTO {
-    @JsonProperty("accountId")
-    public int AccountId;
-    @JsonProperty("classroomId")
-    public int ClassroomId;
-    public ClassroomJoinedDTO(int accountId, int classroomId){
-        this.AccountId = accountId;
-        this.ClassroomId = classroomId;
-    }
+    @JsonProperty("id")
+    private Integer id;
 
-    public ClassroomJoinedDTO(int accountId) {
-        AccountId = accountId;
-    }
+    @JsonProperty("classname")
+    private String classname;
+
+    @JsonProperty("classroom_id")
+    private String classroomId;
+
+    @JsonProperty("course")
+    private String course;
+
+    @JsonProperty("created")
+    private String created;
+
+    @JsonProperty("creator")
+    private String creator;
+
+    @JsonProperty("grade")
+    private String grade;
+
+    // Constructor
+
 }

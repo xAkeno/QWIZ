@@ -20,6 +20,8 @@ public interface ClassroomRepository extends JpaRepository<Classroom, Integer> {
     @Query(value = "SELECT * FROM classroom WHERE id = :id",nativeQuery = true)
     Classroom findById(int id);
 
+    // @Query(value = "SELECT * FROM classroom WHERE id = :id",nativeQuery = true)
+    // List<Object> findByIds(int id);
     @Query(value = "SELECT * FROM classroom WHERE creator=:creator",nativeQuery = true)
     List<Object[]> GetAllCreatedClass(@Param("creator") String creator);
 }

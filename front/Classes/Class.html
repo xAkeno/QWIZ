@@ -45,8 +45,8 @@
               <img src="../image/add-user.png" height="40px" />
             </div>
           </div>
-          <div class="create-btn">
-            <button onclick="" style="cursor: pointer">Create Classroom</button>
+          <div class="create-btn" onclick="showPop()" style="cursor: pointer">
+            <button>Create Classroom</button>
             <img src="../image/check.png" height="40px" />
           </div>
         </div>
@@ -60,15 +60,16 @@
           </ul>
         </div>
       </div>
-      <div class="create-pop">
-        <div class="center-pop">
+      <div class="create-pop" id="create-pop"style="display: none;">
+        <div class="center-pop" id="center-pop">
           <div class="top-pop">
             <div class="banner-pop">
               <h1>Create a new Class</h1>
+              <hr>
             </div>
             <div class="input-pop">
               <span>Enter class name</span>
-              <input type="text" placeholder="Example (Math)" />
+              <input type="text" placeholder="Example (Math-1)" id="name-pop"/>
             </div>
             <div class="about">
               <span>Which course is this for?</span>
@@ -85,10 +86,10 @@
           </div>
           <div class="bottom-pop">
             <div class="cancel">
-              <button>Cancel</button>
+              <button onclick="cancelPop()">Cancel</button>
             </div>
             <div class="create-button">
-              <button>Create</button>
+              <button onclick="createRoom()">Create</button>
             </div>
           </div>
         </div>
